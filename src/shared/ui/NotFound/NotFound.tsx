@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import './styled.scss';
 
 const NotFound: FC = () => {
   return (
