@@ -1,0 +1,109 @@
+@use '../../../app/styles/colors';
+
+$selectHeight: 36px;
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 8px;
+  font-size: 16px;
+  color: colors.$grey;
+
+  //@media (max-width: variables.$small) {
+  //  grid-template-columns: 1fr;
+  //}
+
+  .label {
+    display: block;
+    font-weight: bold;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid colors.$white33;
+    color: colors.$grey;
+    line-height: 20px;
+    font-weight: 500;
+    width: 100%;
+    height: $selectHeight;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    transition:
+            border-color 0.3s ease-out,
+            background 0.3s ease-out;
+
+    &::placeholder {
+      color: colors.$grey66;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: colors.$white47;
+      background: colors.$white14;
+    }
+  }
+
+  .options {
+    position: absolute;
+    top: calc(4px + #{$selectHeight});
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    border: 1px solid colors.$white33;
+    background: colors.$black;
+    padding: 8px;
+
+    /* TODO не совсем понял по макету куда эти тени */
+    //box-shadow: 0px 12px 16px 0px #10182814;
+    //box-shadow: 0px 4px 6px 0px #10182808;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 12px 4px 16px;
+    box-sizing: border-box;
+    height: 32px;
+    border-radius: 6px;
+    transition: background 0.3s ease-out;
+
+    &:hover {
+      background: colors.$white14;
+    }
+
+    /* TODO не нашел экспорт svg в фигме иконки. галочка отличается от макета. */
+    &.selected {
+      display: flex;
+
+      &:after {
+        content: '\2714';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: colors.$green;
+        color: colors.$black;
+        font-weight: 500;
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.arrow {
+  &.up svg {
+    transform: rotate(180deg);
+  }
+}
+
