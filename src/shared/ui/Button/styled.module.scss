@@ -1,0 +1,30 @@
+@use '../../../app/styles/colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  //@media (max-width: variables.$small) {
+  //  grid-template-columns: 1fr;
+  //}
+
+    .button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 12px;
+      height: auto;
+      max-height: 36px;
+      color: colors.$black;
+      background-color: colors.$green;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 20px;
+      cursor: pointer;
+      transition: background 0.1s ease-out;
+
+
+      &:hover,
+      &:active {
+        background-color: colors.$greenLight;
+      }
+    }
+}

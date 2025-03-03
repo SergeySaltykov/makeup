@@ -59,7 +59,7 @@ $selectHeight: 36px;
     //max-width: 400px;
     border-radius: 6px;
     border: 1px solid colors.$white33;
-    background: colors.$black;
+    background: colors.$background;
     padding: 8px;
     box-sizing: border-box;
 
@@ -93,7 +93,7 @@ $selectHeight: 36px;
         justify-content: center;
         border-radius: 50%;
         background: colors.$green;
-        color: colors.$black;
+        color: colors.$background;
         font-weight: 500;
         width: 16px;
         height: 16px;
