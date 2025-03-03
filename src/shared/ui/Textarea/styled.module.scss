@@ -20,7 +20,10 @@
     }
   }
 
-  .input {
+  .textarea {
+    resize: none;
+    overflow-y: hidden;
+    min-height: 36px;
     background: transparent;
     font-size: 15px;
     border-radius: 12px;
@@ -29,7 +32,6 @@
     line-height: 20px;
     font-weight: 500;
     width: 100%;
-    height: 36px;
     box-sizing: border-box;
     padding: 8px 12px;
     transition:
@@ -49,15 +51,5 @@
     &:focus {
       outline: none;
     }
-
-    &.error {
-      border-color: colors.$red;
-    }
   }
-}
-
-.errorMessage {
-  color: colors.$red;
-  font-size: 12px;
-  margin-top: -4px;
 }

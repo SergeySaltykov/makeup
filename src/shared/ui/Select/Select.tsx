@@ -1,7 +1,7 @@
 import { FC, useEffect, useMemo, useRef, useState } from 'react';
 import classNames from 'classnames';
 
-import Arrow from '../assets/arrow.svg';
+import Arrow from '../assets/arrow.svg?react';
 import style from './styled.module.scss';
 
 interface Option {

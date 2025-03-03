@@ -56,11 +56,12 @@ $selectHeight: 36px;
     position: absolute;
     top: calc(4px + #{$selectHeight});
     width: 100%;
-    max-width: 400px;
+    //max-width: 400px;
     border-radius: 6px;
     border: 1px solid colors.$white33;
     background: colors.$black;
     padding: 8px;
+    box-sizing: border-box;
 
     /* TODO не совсем понял по макету куда эти тени */
     //box-shadow: 0px 12px 16px 0px #10182814;
