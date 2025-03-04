@@ -1,10 +1,7 @@
 @use '../../../../app/styles/colors';
+@use '../../../../app/styles/variables';
 
 $color: #95A1AE;
-
-//@media (max-width: variables.$small) {
-//  height: auto;
-//}
 
 .container {
   display: flex;
@@ -13,6 +10,10 @@ $color: #95A1AE;
   align-items: center;
   gap: 25px;
   margin-top: 100px;
+
+  @media (max-width: variables.$small) {
+    margin-top: 50px;
+  }
 
   .header,
   .description {
@@ -28,6 +29,16 @@ $color: #95A1AE;
     font-weight: 700;
     color: colors.$white;
     line-height: 144px;
+
+    @media (max-width: variables.$medium) {
+      font-size: 60px;
+      line-height: 90px;
+    }
+
+    @media (max-width: variables.$small) {
+      font-size: 32px;
+      line-height: 36px;
+    }
   }
 
   .description {
@@ -36,5 +47,16 @@ $color: #95A1AE;
     color: $color;
     line-height: 38px;
     max-width: 60%;
+
+    @media (max-width: variables.$medium) {
+      font-size: 24px;
+      line-height: 32px;
+      max-width: 100%;
+
+    } @media (max-width: variables.$small) {
+      font-size: 20px;
+    line-height: 24px;
+
+    }
   }
 }
