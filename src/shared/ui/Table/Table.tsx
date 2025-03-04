@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
 
 import { IColumn, ITableData } from '../Textarea/types';
@@ -12,15 +12,11 @@ interface ITableProps<T> {
 }
 
 const Table: FC<ITableProps<any>> = ({ data, columns }) => {
-  const tableRef = useRef<HTMLTableElement>(null);
-  const headerRef = useRef<HTMLTableRowElement>(null);
-  const columnRef = useRef<HTMLTableCellElement>(null);
-
   return (
     <div className={style.container}>
-        <table ref={tableRef} className={style.table}>
+        <table className={style.table}>
         <thead className={style.header}>
-        <tr ref={headerRef} className={style.headerRow}>
+        <tr className={style.headerRow}>
           {columns.map(({ id, name, fixed }) => (
             <th key={id as string} className={cn(style.headerCell, { [style.fixed]: fixed })}><span className={style.headerContent}>{name}</span></th>
           ))}
@@ -33,9 +29,8 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
         <tr className={style.row}>
             {columns.map((column) => {
               const value = row[column.id as string];
-              console.log(value, column.fixed);
               return (
-                <td key={`${rowIndex}-${column.id as string}`} ref={columnRef} className={cn(style.cell, {
+                <td key={`${rowIndex}-${column.id as string}`} className={cn(style.cell, {
                   [style.fixed]: column.fixed
                 })}>
                <Cell type={column.type} value={value} />
