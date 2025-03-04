@@ -11,15 +11,20 @@ interface ITableProps<T> {
   columns: IColumn<T>[];
 }
 
+// можно конечно повыносить в отдельные компоненты row, header, cell(обертку), в рамка текущих задач не вижу пока смысла.
 const Table: FC<ITableProps<any>> = ({ data, columns }) => {
   return (
     <div className={style.container}>
         <table className={style.table}>
         <thead className={style.header}>
         <tr className={style.headerRow}>
-          {columns.map(({ id, name, fixed }) => (
-            <th key={id as string} className={cn(style.headerCell, { [style.fixed]: fixed })}><span className={style.headerContent}>{name}</span></th>
-          ))}
+          {columns.map(({ id, name, fixed }) => {
+            return (
+              <th key={id as string} className={cn(style.headerCell, { [style.fixed]: fixed })}>
+                <span className={style.headerContent}>{name}</span>
+              </th>
+            );
+          })}
 
         </tr>
         </thead>
@@ -28,11 +33,12 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
       {data.map((row, rowIndex) => (
         <tr className={style.row}>
             {columns.map((column) => {
-              const value = row[column.id as string];
+              const columnId = column.id as string;
+              const value = row[columnId];
+              const cellClass = cn(style.cell, { [style.fixed]: column.fixed });
+
               return (
-                <td key={`${rowIndex}-${column.id as string}`} className={cn(style.cell, {
-                  [style.fixed]: column.fixed
-                })}>
+                <td key={`${rowIndex}-${columnId}`} className={cellClass}>
                <Cell type={column.type} value={value} />
             </td>
               );

@@ -2,6 +2,10 @@
 
 $color: #95A1AE;
 
+//@media (max-width: variables.$small) {
+//  height: auto;
+//}
+
 .container {
   display: flex;
   flex-direction: column;

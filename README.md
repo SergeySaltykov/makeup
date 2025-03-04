@@ -2,7 +2,6 @@
 
 ## Stack 
  - React
- - Zustand
  - TypeScript
  - Vite
  - SCSS
@@ -19,4 +18,13 @@ yarn start
 ```sh
 yarn build
 ```
+#### path to the mock data file
+
+###### find TODO in file
+
+```sh
+.../features/data-table/ui/constants/index.ts
+```
+
+
 ### Thanks for watching :)
