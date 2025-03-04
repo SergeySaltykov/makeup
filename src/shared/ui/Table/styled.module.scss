@@ -1,5 +1,88 @@
 @use '../../../app/styles/colors';
 
-.container {
+$background: #122030;
+$headerColor: #667085;
 
+.container {
+    overflow: auto;
+    //display: block;
 }
+
+.table {
+  border-radius: 12px;
+  //border-bottom:  1.5px solid $background; // ??
+  background: $background;
+  box-sizing: border-box;
+  color: colors.$white;
+  //height: 712px;
+  max-height: 712px;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-style: hidden;
+
+  .headerRow {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    //background: colors.$greyLight;
+    border: 1px solid colors.$greyLight;
+    color: $headerColor;
+    font-weight: 600;
+    line-height: 12px;
+    height: 44px;
+  }
+
+  .headerCell {
+    padding: 8px;
+    background: colors.$greyLight;
+
+  &:first-child {
+    border-top-left-radius: 10px;
+  }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+  }
+
+  }
+
+
+  .headerContent {
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+  }
+
+  .row {}
+  .cell {
+    height: 36px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px;
+    border-bottom: 1px solid colors.$white14;
+    //overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  //.content {
+  //  line-height: 20px;
+  //}
+
+  .fixedColumn {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+//table tr:last-child td:first-child {
+//  border: 2px solid orange;
+//  border-bottom-left-radius: 10px;
+//}
+//
+//table tr:last-child td:last-child {
+//  border: 2px solid green;
+//  border-bottom-right-radius: 10px;
+//}

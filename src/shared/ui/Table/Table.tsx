@@ -18,30 +18,30 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
   return (
     <div className={style.container}>
         <table ref={tableRef} className={style.table}>
-          <thead className={style.thead}>
-          <tr ref={headerRef} className={style.headRow}>
+          <thead className={style.header}>
+          <tr ref={headerRef} className={style.headerRow}>
             {columns.map(({ id, name }) => (
-              <th key={id as string} className={style.headCell}>{name}</th>
+              <th key={id as string} className={style.headerCell}><span className={style.headerContent}>{name}</span></th>
             ))}
 
           </tr>
           </thead>
-        </table>
 
-        <tbody>
+          <tbody>
         {data.map((row, rowIndex) => (
-            <tr className={style.row}>
+          <tr className={style.row}>
               {columns.map((column) => {
                 const value = row[column.id as string];
                 return (
                   <td key={`${rowIndex}-${column.id as string}`} ref={columnRef} className={style.cell}>
-                    {value}
+                    <span className={style.content}>{value}</span>
               </td>
                 );
               })}
             </tr>
         ))}
         </tbody>
+        </table>
       </div>
   );
 };
