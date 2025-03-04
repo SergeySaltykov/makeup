@@ -31,7 +31,7 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
 
         <tbody>
       {data.map((row, rowIndex) => (
-        <tr className={style.row}>
+        <tr key={rowIndex} className={style.row}>
             {columns.map((column) => {
               const columnId = column.id as string;
               const value = row[columnId];

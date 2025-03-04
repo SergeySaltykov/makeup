@@ -4,7 +4,7 @@
  - React
  - TypeScript
  - Vite
- - SCSS
+ - SCSS modules
  - FSD
 
 #### Run local server
@@ -18,13 +18,5 @@ yarn start
 ```sh
 yarn build
 ```
-#### path to the mock data file
-
-###### find TODO in file
-
-```sh
-.../features/data-table/ui/constants/index.ts
-```
-
 
 ### Thanks for watching :)
