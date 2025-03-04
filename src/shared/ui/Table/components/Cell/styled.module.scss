@@ -1,0 +1,21 @@
+@use '../../../../../app/styles/colors';
+
+.cell {
+  &.success,
+  &.error {
+    padding: 2px 8px;
+    border-radius: 4px;
+    height: 20px;
+  }
+
+  &.success {
+    background: colors.$green14;
+    color: colors.$green;
+  }
+
+  &.error {
+    background: colors.$red0F;
+    color: colors.$red;
+
+  }
+}

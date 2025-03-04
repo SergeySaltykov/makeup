@@ -3,86 +3,117 @@
 $background: #122030;
 $headerColor: #667085;
 
+// TODO поиграться со скроллом
+
 .container {
-    overflow: auto;
-    //display: block;
+  overflow: auto;
+  max-height: 712px;
+  border-radius: 24px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(217, 217, 217, 0.6);
+    border-radius: 6px;
+    border: 3px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    opacity: 0.6;
+  }
+    .wrapper {
+      overflow: auto;
+      position: relative;
+      border-radius: 24px;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(217, 217, 217, 0.6);
+        border-radius: 6px;
+        border: 3px solid transparent;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        opacity: 0.6;
+      }
+    }
 }
 
 .table {
   border-radius: 12px;
-  //border-bottom:  1.5px solid $background; // ??
   background: $background;
   box-sizing: border-box;
   color: colors.$white;
-  //height: 712px;
-  max-height: 712px;
   width: 100%;
-  table-layout: fixed;
+  //table-layout: fixed;
   border-spacing: 0;
   border-collapse: collapse;
   border-style: hidden;
 
   .headerRow {
+    height: 44px;
     position: sticky;
     top: 0;
-    z-index: 1;
-    //background: colors.$greyLight;
-    border: 1px solid colors.$greyLight;
     color: $headerColor;
     font-weight: 600;
     line-height: 12px;
-    height: 44px;
+    z-index: 1;
   }
 
   .headerCell {
     padding: 8px;
     background: colors.$greyLight;
+    font-size: 12px;
 
-  &:first-child {
-    border-top-left-radius: 10px;
+    //&:first-child {
+    //  border-top-left-radius: 10px;
+    //}
+    //
+    //&:last-child {
+    //  border-top-right-radius: 10px;
+    //}
+
+    &.fixed {
+      position: sticky;
+      left: 0;
+    }
   }
-
-    &:last-child {
-      border-top-right-radius: 10px;
-  }
-
-  }
-
 
   .headerContent {
     display: flex;
     align-items: center;
-    //justify-content: center;
   }
 
-  .row {}
   .cell {
     height: 36px;
     font-size: 14px;
     font-weight: 400;
     padding: 8px;
-    border-bottom: 1px solid colors.$white14;
-    //overflow: hidden;
     box-sizing: border-box;
-  }
+    background: $background;
 
-  //.content {
-  //  line-height: 20px;
-  //}
+    &:not(:first-child) {
+      border-bottom: 1px solid colors.$white14;
+    }
 
-  .fixedColumn {
-    position: sticky;
-    left: 0;
-    z-index: 1;
+    &.fixed {
+      position: sticky;
+      left: 0;
+    }
   }
 }
-
-//table tr:last-child td:first-child {
-//  border: 2px solid orange;
-//  border-bottom-left-radius: 10px;
-//}
-//
-//table tr:last-child td:last-child {
-//  border: 2px solid green;
-//  border-bottom-right-radius: 10px;
-//}
