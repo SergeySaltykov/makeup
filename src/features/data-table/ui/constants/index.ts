@@ -363,6 +363,8 @@ export const response: Response[] = [
   },
 ];
 
+// можно еще в конфиг прописать шириру колонок
+
 export const columns: IColumn<Response>[] = [
   {
     id: 'id',

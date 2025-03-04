@@ -3,8 +3,6 @@
 $background: #122030;
 $headerColor: #667085;
 
-// TODO поиграться со скроллом
-
 .container {
   overflow: auto;
   max-height: 712px;
@@ -25,34 +23,6 @@ $headerColor: #667085;
     border-radius: 6px;
     border: 3px solid transparent;
   }
-
-  &::-webkit-scrollbar-thumb:hover {
-    opacity: 0.6;
-  }
-    .wrapper {
-      overflow: auto;
-      position: relative;
-      border-radius: 24px;
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: rgba(217, 217, 217, 0.6);
-        border-radius: 6px;
-        border: 3px solid transparent;
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        opacity: 0.6;
-      }
-    }
 }
 
 .table {

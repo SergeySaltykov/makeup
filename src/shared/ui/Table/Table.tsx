@@ -18,7 +18,6 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
 
   return (
     <div className={style.container}>
-      <div className={style.wrapper}>
         <table ref={tableRef} className={style.table}>
         <thead className={style.header}>
         <tr ref={headerRef} className={style.headerRow}>
@@ -47,8 +46,6 @@ const Table: FC<ITableProps<any>> = ({ data, columns }) => {
       ))}
       </tbody>
       </table>
-      </div>
-
     </div>
   );
 };

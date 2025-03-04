@@ -1,5 +1,4 @@
 import { FC } from 'react';
-// import Routes from './Routes';
 import {
   Layout,
 } from '../shared/ui';
