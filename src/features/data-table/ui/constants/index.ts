@@ -379,53 +379,7 @@ export const columns: IColumn<Response>[] = [
     id: 'lastName',
     name: 'Фамилия',
     type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
   },
-  {
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },{
-    id: 'lastName',
-    name: 'Фамилия',
-    type: 'string',
-  },
-
   {
     id: 'gender',
     name: 'Пол',
@@ -437,8 +391,28 @@ export const columns: IColumn<Response>[] = [
     type: 'string',
   },
   {
+    id: 'email',
+    name: 'Email',
+    type: 'string',
+  },
+  {
+    id: 'phone',
+    name: 'Телефон',
+    type: 'string',
+  },
+  {
+    id: 'registerChannel',
+    name: 'Канал регистрации',
+    type: 'string',
+  },
+  {
     id: 'participationConfirm',
     name: 'Участие разрешено',
+    type: 'bool',
+  },
+  {
+    id: 'emailConfirm',
+    name: 'Email подтвержден',
     type: 'bool',
   },
   {
